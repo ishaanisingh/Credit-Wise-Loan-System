@@ -21,12 +21,9 @@ dti_ratio = st.number_input("Debt-to-Income (DTI) Ratio", min_value=0.0)
 # 3. Create the Prediction Button
 if st.button("Predict Loan Status"):
     
-    # Remember your feature engineering! You must apply the same math here.
     credit_score_sq = credit_score ** 2
     dti_ratio_sq = dti_ratio ** 2
     
-    # Arrange the inputs in the EXACT SAME ORDER as your training data columns
-    # Example: [Applicant_Income, Credit_Score_Sq, DTI_Ratio_Sq, ...]
     user_input = np.array([[income, credit_score_sq, dti_ratio_sq]])
     
     # Scale the input
